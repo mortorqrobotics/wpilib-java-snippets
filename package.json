@@ -4,6 +4,10 @@
     "description": "Snippets for common patterns in wpilib for java",
     "version": "0.0.1",
     "publisher": "mortorqrobotics",
+    "icon": "icons/icon.png",
+    "author": {
+        "name": "Cameron Asher"
+    },
     "engines": {
         "vscode": "^1.28.0"
     },
