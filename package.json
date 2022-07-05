@@ -1,0 +1,28 @@
+{
+    "name": "wpilib-java-snippets",
+    "displayName": "WPILIB Java Snippets",
+    "description": "Snippets for common patterns in wpilib for java",
+    "version": "0.0.1",
+    "publisher": "mortorqrobotics",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mortorqrobotics/wpilib-java-snippets.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mortorqrobotics/wpilib-java-snippets/issues"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": "java",
+                "path": "./snippets.json"
+            }
+        ]
+    },
+    "categories": [
+        "Snippets"
+    ]
+}
