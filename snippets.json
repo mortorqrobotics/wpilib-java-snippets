@@ -47,7 +47,7 @@
 			"}",
 			""
 		],
-		"description": "CommandSnippet"
+		"description": "Basic skeleton for a command"
 	},
 	"SubsystemSnippet": {
 		"prefix": "w-subsystem-base",
@@ -74,7 +74,7 @@
 			"}",
 			""
 		],
-		"description": "SubsystemSnippet"
+		"description": "Basic skeleton for a subsystem"
 	},
 	"NeoMagazine": {
 		"prefix": "w-neo-magazine-subsystem",
@@ -108,7 +108,7 @@
 			"  }",
 			"}"
 		],
-		"description": "NeoMagazine"
+		"description": "Magazine subsystem with neo"
 	},
 	"FalconMagazine": {
 		"prefix": "w-falcon-magazine-subsystem",
@@ -142,7 +142,7 @@
 			"  }",
 			"}"
 		],
-		"description": "FalconMagazine"
+		"description": "Magazine subsystem with falcon"
 	},
 	"MagazineUpCommand": {
 		"prefix": "w-up-magazine-command",
@@ -172,7 +172,7 @@
 			"    }",
 			"}"
 		],
-		"description": "MagazineUpCommand"
+		"description": "Magazine command for up/forward movement"
 	},
 	"MagazineDownCommand": {
 		"prefix": "w-down-magazine-command",
@@ -202,7 +202,7 @@
 			"    }",
 			"}"
 		],
-		"description": "MagazineDownCommand"
+		"description": "Magazine command for down/backward movement"
 	},
 	"NeoIntake": {
 		"prefix": "w-neo-intake-subsystem",
@@ -237,7 +237,7 @@
 			"}",
 			""
 		],
-		"description": "NeoIntake"
+		"description": "Intake subsystem for neo"
 	},
 	"FalconIntake": {
 		"prefix": "w-falcon-intake-subsystem",
@@ -272,7 +272,7 @@
 			"}",
 			""
 		],
-		"description": "FalconIntake"
+		"description": "Intake subsystem for falcon"
 	},
 	"IntakeCommand": {
 		"prefix": "w-intake-command",
@@ -302,7 +302,7 @@
 			"    }",
 			"}"
 		],
-		"description": "IntakeCommand"
+		"description": "Intake (forward) command"
 	},
 	"OuttakeCommand": {
 		"prefix": "w-outtake-command",
@@ -332,28 +332,28 @@
 			"    }",
 			"}"
 		],
-		"description": "OuttakeCommand"
+		"description": "Outtake (backward) command"
 	},
 	"NewFalconMotor": {
 		"prefix": "w-falcon",
 		"body": [
 			"TalonFX ${1:m_motor} = new TalonFX(${2:0});"
 		],
-		"description": "NewFalconMotor"
+		"description": "Initalize a new falcon motor"
 	},
 	"NewNeoMotor": {
 		"prefix": "w-neo",
 		"body": [
 			"CANSparkMax ${1:m_motor} = new CANSparkMax(${2:0}, MotorType.${3:kBrushless});"
 		],
-		"description": "NewNeoMotor"
+		"description": "Initalize a new neo motor"
 	},
 	"FalconConfig": {
 		"prefix": "w-falcon-config",
 		"body": [
 			"TalonFXConfiguration config = new TalonFXConfiguration();"
 		],
-		"description": "FalconConfig"
+		"description": "Initalize a new config for falcon motors"
 	},
 	"FalconPID": {
 		"prefix": "w-falcon-config-pid",
@@ -363,7 +363,7 @@
 			"${1:m_motor}.config_kI(${2:slotIdx}, value, ${3:timeoutMs});",
 			"${1:m_motor}.config_kD(${2:slotIdx}, value, ${3:timeoutMs});"
 		],
-		"description": "FalconPID"
+		"description": "Configure pid for a falcon motor"
 	},
 	"NeoPID": {
 		"prefix": "w-neo-config-pid",
@@ -374,97 +374,97 @@
 			"${1:m_pidController}.setI(${3:gain});",
 			"${1:m_pidController}.setD(${3:gain});"
 		],
-		"description": "NeoPID"
+		"description": "Configure pid for a neo motor"
 	},
 	"NeoPIDVelocity": {
 		"prefix": "w-neo-pid-velocity",
 		"body": [
 			"${1:m_pidController}.setReference(${2:value}, ControlType.kVelocity);"
 		],
-		"description": "NeoPIDVelocity"
+		"description": "Set setpoint for velocity pid for a neo motor"
 	},
 	"FalconPIDVelocity": {
 		"prefix": "w-falcon-pid-velocity",
 		"body": [
 			"${1:m_motor}.set(ControlMode.Velocity, ${2:value});"
 		],
-		"description": "FalconPIDVelocity"
+		"description": "Set setpoint for velocity pid for a falcon motor"
 	},
 	"FalconPIDPosition": {
 		"prefix": "w-falcon-pid-position",
 		"body": [
 			"${1:m_motor}.set(ControlMode.Position, ${2:value});"
 		],
-		"description": "FalconPIDPosition"
+		"description": "Set setpoint for position pid for a falcon motor"
 	},
 	"NeoPIDPosition": {
 		"prefix": "w-neo-pid-position",
 		"body": [
 			"${1:m_pidController}.setReference(${2:value}, ControlType.kPosition);"
 		],
-		"description": "NeoPIDPosition"
+		"description": "Set setpoint for position pid for a neo motor"
 	},
 	"SmartDashboardPutNumber": {
 		"prefix": "w-smartdashboard-put-number",
 		"body": [
 			"SmartDashboard.putNumber(\"${1:key}\", ${2:value});"
 		],
-		"description": "SmartDashboardPutNumber"
+		"description": "Put number to smartdashboard"
 	},
 	"SmartDashboardGetNumber": {
 		"prefix": "w-smartdashboard-get-number",
 		"body": [
-			"double ${1:num}= SmartDashboard.getNumber(\"${2:key}\", ${3:defaultValue});"
+			"double ${1:num} = SmartDashboard.getNumber(\"${2:key}\", ${3:defaultValue});"
 		],
-		"description": "SmartDashboardGetNumber"
+		"description": "Get number from smartdashboard"
 	},
 	"SmartDashboardGetBoolean": {
 		"prefix": "w-smartdashboard-get-boolean",
 		"body": [
 			"boolean ${1:isOn} = SmartDashboard.getBoolean(\"${2:key}\", ${3:defaultValue});"
 		],
-		"description": "SmartDashboardGetBoolean"
+		"description": "Get boolean from smartdashboard"
 	},
 	"SmartDashboardGetString": {
 		"prefix": "w-smartdashboard-get-string",
 		"body": [
 			"String ${1:str} = SmartDashboard.getString(\"${2:key}\", ${3:defaultValue});"
 		],
-		"description": "SmartDashboardGetString"
+		"description": "Get string from smartdashboard"
 	},
 	"SmartDashboardPutBoolean": {
 		"prefix": "w-smartdashboard-put-boolean",
 		"body": [
 			"SmartDashboard.putBoolean(\"${1:key}\", ${2:value});"
 		],
-		"description": "SmartDashboardPutBoolean"
+		"description": "Put boolean to smartdashboard"
 	},
 	"SmartDashboardPutString": {
 		"prefix": "w-smartdashboard-put-string",
 		"body": [
 			"SmartDashboard.putString(\"${1:key}\", ${2:value});"
 		],
-		"description": "SmartDashboardPutString"
+		"description": "Put string to smartdashboard"
 	},
 	"CommandsButton": {
 		"prefix": "w-button",
 		"body": [
 			"public static final Button ${1:ACTION_NAME} = new Button(${2:ButtonTrigger});"
 		],
-		"description": "CommandsButton"
+		"description": "Initialize new command button"
 	},
 	"FalconPercent": {
 		"prefix": "w-falcon-percent",
 		"body": [
 			"${1:m_motor}.set(ControlMode.PercentOutput, ${2:speed});"
 		],
-		"description": "FalconPercent"
+		"description": "Run falcon with percent output"
 	},
 	"NeoPercent": {
 		"prefix": "w-neo-percent",
 		"body": [
 			"${1:m_motor}.set(${2:speed});"
 		],
-		"description": "NeoPercent"
+		"description": "Run neo with percent output"
 	}
 }

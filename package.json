@@ -2,7 +2,7 @@
     "name": "wpilib-java-snippets",
     "displayName": "WPILIB Java Snippets",
     "description": "Snippets for common patterns in wpilib for java",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "mortorqrobotics",
     "icon": "icons/icon.png",
     "author": {
